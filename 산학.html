@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="dats.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url('군복.jpg');
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            opacity: 0.87;
+        }
+        #flex{
+            position: absolute;
+            display: none;
+            clear: both;
+            top: 0;
+            left: 0;
+        }
+        .menuvar{
+            width: 300px;
+            height: 500px;
+            background-color: skyblue;
+        }
+        .title{
+            background-color: red;
+            width: 300px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            position: absolute;
+        }
+        .choose{
+            text-align: center;
+        }
+        .choose ul li{
+            list-style: none;
+            line-height: 2;
+        }
+        .ontitle{
+            background-color: springgreen;
+            width: 300px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            float: left;
+            color: white;
+        }
+        #illustration{
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            width: 1000px;
+            height: 618px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id = "illustration">
+
+    </div>
+        
+    <div id = "alltitle">
+            <div class="ontitle">육군</div>
+            <div class="ontitle">해군</div>
+            <div class="ontitle">공군</div>
+        </div>
+
+        <div id = "flex">
+            <div class="menuvar">
+                <div class="title">육군
+                    <div class="choose">
+                        <ul>
+                            <li mytype="K-9"> K9 자주포 </li> 
+                            <li mytype="K-21"> K21 보병전투 차량 </li> 
+                            <li mytype="AH-1"> AH-1 코브라 </li> 
+                            <li mytype="K-30"> K-30 비호 </li> 
+                            <li mytype="K2"> K2 소총 </li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+       
+
+            <div class="menuvar">
+                <div class="title">해군
+                    <div class="choose">
+                        <ul>
+                            <li mytype="sejong"> 세종대왕급 구축함 </li> 
+                            <li mytype="Ahn Chang-ho"> 도산안창호급 잠수함 </li> 
+                            <li mytype="eagle"> 참수리급 고속정 </li> 
+                            <li mytype="Dae-gu"> 대구급 호위함 </li> 
+                            <li mytype="Dokdo"> 독도급 대형수송함 </li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+     
+            <div class="menuvar">
+                <div class="title">공군
+                    <div class="choose">
+                        <ul>
+                            <li mytype="KF-21"> KF-21 보라매 </li> 
+                            <li mytype="KF-16"> KF-16 </li> 
+                            <li mytype="F-35B"> F-35B </li> 
+                            <li mytype="FA-50"> FA-50  </li> 
+                            <li mytype="CH-47"> CH-50 Chinook </li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+
+            const div = document.getElementById('flex');
+            const img = document.createElement('img');
+            const imgdiv = document.getElementById('illustration')
+
+            document.querySelector('#alltitle').addEventListener('mouseover', (event) =>{
+                if(div.style.display == 'none'){
+                    div.style.display = 'flex';
+                }else{
+                    div.style.display = 'none';
+                }
+            })
+
+            document.querySelector('#flex').addEventListener('mouseleave', (event) =>{
+                if(div.style.display == 'none'){
+                    dis.style.display = 'flex';
+                }else{
+                    div.style.display = 'none';
+                }
+            })
+
+            document.querySelectorAll('li').forEach((element) =>{
+                element.addEventListener('click', (evt) =>{
+                    const type = evt.target.getAttribute('mytype');
+                    imgs[type];
+                    imgdiv.style.backgroundImage = "url(" + imgs[type] + ")";
+                })
+            }) 
+        </script>
+</body>
+</html>
