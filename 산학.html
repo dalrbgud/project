@@ -55,16 +55,24 @@
         #illustration{
             position: absolute;
             top: 100px;
-            left: 10px;
+            width: 900px;
+            height: 865px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        #introduce{
+            float: right;
             width: 1000px;
-            height: 618px;
-            background-color: aqua;
+            margin-top: 450px;
+            background-color: white;
+            line-height: 30px;
         }
     </style>
 </head>
 <body>
     <div id = "illustration">
-
+        
     </div>
         
     <div id = "alltitle">
@@ -82,7 +90,7 @@
                             <li mytype="K-21"> K21 보병전투 차량 </li> 
                             <li mytype="AH-1"> AH-1 코브라 </li> 
                             <li mytype="K-30"> K-30 비호 </li> 
-                            <li mytype="K2"> K2 소총 </li> 
+                            <li mytype="K2"> K2 흑표 전차 </li> 
                         </ul>
                     </div>
                 </div>
@@ -94,7 +102,7 @@
                     <div class="choose">
                         <ul>
                             <li mytype="sejong"> 세종대왕급 구축함 </li> 
-                            <li mytype="Ahn Chang-ho"> 도산안창호급 잠수함 </li> 
+                            <li mytype="AhnChang-ho"> 도산 안창호급 잠수함 </li> 
                             <li mytype="eagle"> 참수리급 고속정 </li> 
                             <li mytype="Dae-gu"> 대구급 호위함 </li> 
                             <li mytype="Dokdo"> 독도급 대형수송함 </li> 
@@ -108,7 +116,7 @@
                     <div class="choose">
                         <ul>
                             <li mytype="KF-21"> KF-21 보라매 </li> 
-                            <li mytype="KF-16"> KF-16 </li> 
+                            <li mytype="C-130"> C-130H </li> 
                             <li mytype="F-35B"> F-35B </li> 
                             <li mytype="FA-50"> FA-50  </li> 
                             <li mytype="CH-47"> CH-50 Chinook </li> 
@@ -117,11 +125,16 @@
                 </div>
             </div>
         </div>
+        <div id="introduce">
+           <p id="te"></p>
+        </div>
         <script>
 
             const div = document.getElementById('flex');
             const img = document.createElement('img');
-            const imgdiv = document.getElementById('illustration')
+            const imgdiv = document.getElementById('illustration');
+            const intro = document.getElementById('introduce');
+            const te = document.querySelector('#te');
 
             document.querySelector('#alltitle').addEventListener('mouseover', (event) =>{
                 if(div.style.display == 'none'){
@@ -143,6 +156,7 @@
                 element.addEventListener('click', (evt) =>{
                     const type = evt.target.getAttribute('mytype');
                     imgs[type];
+                    te.innerText=introduce[type];
                     imgdiv.style.backgroundImage = "url(" + imgs[type] + ")";
                 })
             }) 
